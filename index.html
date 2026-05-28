@@ -16,14 +16,14 @@
             color: #fff;
             text-align: center;
             padding: 20px;
-            padding-bottom: 120px;
+            padding-bottom: 130px;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* 品牌头像 + 名称 */
+        /* 品牌头像 */
         .brand-header {
             display: flex;
             align-items: center;
@@ -69,7 +69,7 @@
             text-decoration: none;
             display: block;
             box-shadow: 0 0 20px rgba(37,211,102,0.4);
-            animation: flash 1.8s infinite alternate;
+            animation: flash 1.6s infinite alternate;
             position: relative;
         }
         .floating-cta-button:after {
@@ -82,7 +82,7 @@
         }
         @keyframes flash {
             0% { box-shadow: 0 0 15px rgba(37,211,102,0.4); }
-            100% { box-shadow: 0 0 25px rgba(37,211,102,0.7); }
+            100% { box-shadow: 0 0 30px rgba(37,211,102,0.8); }
         }
         @keyframes move {
             0% { right:18px; }
@@ -99,23 +99,24 @@
 
         /* 首屏 */
         .hero {
-            padding: 15px 0 10px;
+            padding: 10px 0 15px;
         }
         .hero p {
             font-size: 14px;
             color: #ccc;
+            line-height: 1.4;
         }
 
-        /* 3个功能栏（手机端自动一行，变小） */
+        /* 3个功能栏（手机一行） */
         .features {
             display: flex;
             gap: 8px;
-            margin: 20px 0 35px;
+            margin: 15px 0 30px;
         }
         .feature-card {
             flex:1;
             background:#1a1a1a;
-            padding:12px 8px;
+            padding:12px 6px;
             border-radius:10px;
         }
         .feature-card .icon {
@@ -133,7 +134,7 @@
             margin-top:2px;
         }
 
-        /* 图片模块共用 */
+        /* 标题样式 */
         .gallery h2,
         .qc-gallery h2,
         .review-gallery h2 {
@@ -161,7 +162,7 @@
             gap:10px;
         }
 
-        /* 所有图片点击放大 */
+        /* 图片点击放大 */
         .qc-grid img,
         .review-grid img,
         .gallery-grid img {
@@ -172,7 +173,7 @@
             cursor:zoom-in;
         }
 
-        /* 图片放大弹窗 */
+        /* 图片弹窗 */
         .lightbox {
             display:none;
             position:fixed;
@@ -208,7 +209,7 @@
 
 <body>
 
-<!-- 图片放大弹窗 -->
+<!-- 图片放大 -->
 <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <img src="" id="lightbox-img" class="lightbox-img">
@@ -220,7 +221,7 @@
         📱 LINEを追加
     </a>
     <div class="cta-desc">
-        高画質ディテール・QC動画・お客様の声・全商品カタログ<br>LINEで全部受け取れます
+        高画質ディテール・QC動画・お客様の声・全商品カタログ<br>LINEで全部無料受け取れます ✨
     </div>
 </div>
 
@@ -240,7 +241,7 @@
         <p>厳選素材・職人技術<br>24項目 品質チェック済</p>
     </div>
 
-    <!-- 3个品质模块（手机一行） -->
+    <!-- 3个品质模块 -->
     <div class="features">
         <div class="feature-card">
             <div class="icon">🔍</div>
@@ -259,9 +260,9 @@
         </div>
     </div>
 
-    <!-- QC 细节图 -->
+    <!-- QC 细节 -->
     <div class="qc-gallery">
-        <h2>🔎 ディテール</h2>
+        <h2>🔎 ディテールチェック</h2>
         <div class="qc-grid">
             <img src="https://i.imgur.com/AnvMrLb.jpeg" onclick="openLightbox(this.src)">
             <img src="https://i.imgur.com/WcdE9Lb.jpeg" onclick="openLightbox(this.src)">
@@ -291,7 +292,7 @@
     </div>
 
     <div class="footer">
-        <p>✅ 品質保証 ✅ 安心対応 ✅ アフターサポート</p>
+        <p>✅ 安心対応 ✅ アフターサポート</p>
         <br>
         <p>© 2026 Wisdom Luxury</p>
     </div>
