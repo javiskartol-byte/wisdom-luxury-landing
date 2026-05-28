@@ -47,7 +47,7 @@
             color: #ccc;
         }
 
-        /* 悬浮LINE按钮（闪烁+箭头） */
+        /* 悬浮LINE按钮（核心优化：解决文字重叠问题） */
         .floating-cta {
             position: fixed;
             bottom: 20px;
@@ -56,6 +56,11 @@
             z-index: 999;
             width: 92%;
             max-width: 380px;
+            background: rgba(26, 26, 26, 0.95); /* 新增：半透明深色背景 */
+            border-radius: 15px;
+            padding: 15px 10px 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
         }
         .floating-cta-button {
             background-color: #25d366;
@@ -71,6 +76,7 @@
             box-shadow: 0 0 20px rgba(37,211,102,0.4);
             animation: flash 1.6s infinite alternate;
             position: relative;
+            margin-bottom: 10px;
         }
         .floating-cta-button:after {
             content: "👉";
@@ -95,6 +101,7 @@
             margin-top: 8px;
             line-height: 1.4;
             font-weight: bold;
+            /* 优化：文字背景已由外层floating-cta提供 */
         }
 
         /* 首屏 */
