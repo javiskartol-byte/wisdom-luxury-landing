@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisdom Luxury</title>
 
-    <!-- Meta Pixel -->
+    <!-- 你的 Meta Pixel 已安装 -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -66,7 +66,7 @@
             color: #ccc;
         }
 
-        /* 悬浮LINE按钮 */
+        /* 悬浮LINE按钮（核心优化：解决文字重叠问题） */
         .floating-cta {
             position: fixed;
             bottom: 20px;
@@ -75,7 +75,7 @@
             z-index: 999;
             width: 92%;
             max-width: 380px;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(26, 26, 26, 0.95); /* 新增：半透明深色背景 */
             border-radius: 15px;
             padding: 15px 10px 10px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
@@ -120,6 +120,7 @@
             margin-top: 8px;
             line-height: 1.4;
             font-weight: bold;
+            /* 优化：文字背景已由外层floating-cta提供 */
         }
 
         /* 首屏 */
@@ -132,7 +133,7 @@
             line-height: 1.4;
         }
 
-        /* 3个功能栏 */
+        /* 3个功能栏（手机一行） */
         .features {
             display: flex;
             gap: 8px;
@@ -168,24 +169,26 @@
             margin-bottom:15px;
         }
 
-        /* 布局网格 */
+        /* QC 4图 */
         .qc-grid {
             display:grid;
             grid-template-columns:repeat(4,1fr);
             gap:8px;
         }
+        /* 客户反馈 2图 */
         .review-grid {
             display:grid;
             grid-template-columns:repeat(2,1fr);
             gap:8px;
         }
+        /* 产品 4图 */
         .gallery-grid {
             display:grid;
             grid-template-columns:repeat(2,1fr);
             gap:10px;
         }
 
-        /* 图片样式 */
+        /* 图片点击放大 */
         .qc-grid img,
         .review-grid img,
         .gallery-grid img {
@@ -232,13 +235,13 @@
 
 <body>
 
-<!-- 图片放大弹窗 -->
+<!-- 图片放大 -->
 <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <img src="" id="lightbox-img" class="lightbox-img">
 </div>
 
-<!-- 悬浮LINE按钮 -->
+<!-- 悬浮LINE按钮 + 已加像素点击追踪 -->
 <div class="floating-cta">
     <a href="https://line.me/ti/p/fuj9ICOS-f" class="floating-cta-button" onclick="fbq('track', 'LineButtonClick')">
         📱 LINEを追加
@@ -250,7 +253,7 @@
 
 <div class="container">
 
-    <!-- 品牌头像 -->
+    <!-- 品牌头像（首屏核心图，不开启懒加载） -->
     <div class="brand-header">
         <img src="https://i.imgur.com/friQ8h0.png" class="brand-avatar" alt="ブランドアイコン">
         <div class="brand-title">
@@ -259,12 +262,12 @@
         </div>
     </div>
 
-    <!-- 首屏文案 -->
+    <!-- 首屏 -->
     <div class="hero">
         <p>厳選素材・職人技術<br>24項目 品質チェック済</p>
     </div>
 
-    <!-- 三大优势 -->
+    <!-- 3个品质模块 -->
     <div class="features">
         <div class="feature-card">
             <div class="icon">🔍</div>
@@ -283,11 +286,11 @@
         </div>
     </div>
 
-    <!-- QC 细节图（首屏主图高优先级，无懒加载） -->
+    <!-- QC 细节图（已替换链接 + 懒加载） -->
     <div class="qc-gallery">
         <h2>🔎 ディテールチェック</h2>
         <div class="qc-grid">
-            <img src="https://i.imgur.com/0uQfK0R.jpeg" fetchpriority="high" onclick="openLightbox(this.src)" alt="QC詳細1">
+            <img src="https://i.imgur.com/kR2XX6D.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="QC詳細1">
             <img src="https://i.imgur.com/MFjAKpO.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="QC詳細2">
             <img src="https://i.imgur.com/22WnqNO.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="QC詳細3">
             <img src="https://i.imgur.com/1OlUMOc.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="QC詳細4">
@@ -298,12 +301,12 @@
     <div class="review-gallery" style="margin:35px 0">
         <h2>💬 お客様の声</h2>
         <div class="review-grid">
-            <img src="https://i.imgur.com/lyNjnWj.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="お客様の声1">
-            <img src="https://i.imgur.com/XZLBhXE.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="お客様の声2">
+            <img src="https://i.imgur.com/wpjPMGe.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="お客様の声1">
+            <img src="https://i.imgur.com/UD9qr9C.jpeg" loading="lazy" onclick="openLightbox(this.src)" alt="お客様の声2">
         </div>
     </div>
 
-    <!-- 热门产品 -->
+    <!-- 热门产品图（已替换链接 + 懒加载） -->
     <div class="gallery">
         <h2>🛍️ ラインナップ</h2>
         <div class="gallery-grid">
